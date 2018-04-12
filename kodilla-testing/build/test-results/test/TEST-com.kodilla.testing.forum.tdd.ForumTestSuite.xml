@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.tdd.ForumTestSuite" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-04-12T14:32:08" hostname="ann" time="0.014">
+<testsuite name="com.kodilla.testing.forum.tdd.ForumTestSuite" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-04-12T18:59:20" hostname="ann" time="0.014">
   <properties/>
   <testcase name="testRemovePostNotExisting" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.003"/>
   <testcase name="testAddPost" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.001"/>
   <testcase name="testGetPost" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.0"/>
   <testcase name="testRemoveCommentNotExisting" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.003"/>
-  <testcase name="testRemoveComment" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.0"/>
+  <testcase name="testRemoveComment" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.001"/>
   <testcase name="testRemovePost" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.0"/>
   <testcase name="testGetComment" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.0"/>
   <testcase name="testAddComment" classname="com.kodilla.testing.forum.tdd.ForumTestSuite" time="0.0"/>

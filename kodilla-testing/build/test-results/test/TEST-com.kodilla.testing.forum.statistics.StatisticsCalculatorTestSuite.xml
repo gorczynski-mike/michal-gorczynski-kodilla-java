@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-04-12T14:32:08" hostname="ann" time="0.357">
+<testsuite name="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-04-12T18:59:20" hostname="ann" time="0.341">
   <properties/>
-  <testcase name="testCalculateAdvStatisticsMoreCommentsThanPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.326"/>
+  <testcase name="testCalculateAdvStatisticsMoreCommentsThanPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.316"/>
   <testcase name="testCalculateAdvStatisticsZeroComments" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.004"/>
-  <testcase name="testCalculateAdvStatisticsThousandPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.003"/>
+  <testcase name="testCalculateAdvStatisticsThousandPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.004"/>
   <testcase name="testCalculateAdvStatisticsLessCommentsThanPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.003"/>
   <testcase name="testCalculateAdvStatisticsEverythingZero" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.003"/>
-  <testcase name="testCalculateAdvStatisticsHundredUsers" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.004"/>
-  <testcase name="testCalculateAdvStatisticsZeroPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.004"/>
-  <testcase name="testCalculateAdvStatisticsZeroUsers" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.004"/>
+  <testcase name="testCalculateAdvStatisticsHundredUsers" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.003"/>
+  <testcase name="testCalculateAdvStatisticsZeroPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.003"/>
+  <testcase name="testCalculateAdvStatisticsZeroUsers" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.003"/>
   <system-out><![CDATA[StatisticsCalculator Test Suite: begin
 
 Test #1 : testCalculateAdvStatisticsMoreCommentsThanPosts : begin
