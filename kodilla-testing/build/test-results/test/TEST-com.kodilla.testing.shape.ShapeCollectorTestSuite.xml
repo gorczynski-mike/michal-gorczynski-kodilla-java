@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.shape.ShapeCollectorTestSuite" tests="9" skipped="0" failures="0" errors="0" timestamp="2018-04-11T18:33:58" hostname="ann" time="0.019">
+  <properties/>
+  <testcase name="testShowFiguresNoFigures" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite" time="0.002"/>
+  <testcase name="testShowFigures" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite" time="0.005"/>
+  <testcase name="testAddNullFigure" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite" time="0.001"/>
+  <testcase name="testRemoveFigure" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite" time="0.001"/>
+  <testcase name="testAddFigure" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite" time="0.001"/>
+  <testcase name="testGetFigureNotExisting" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite" time="0.002"/>
+  <testcase name="testGetFigure" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite" time="0.001"/>
+  <testcase name="testRemoveNullFigure" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite" time="0.0"/>
+  <testcase name="testRemoveFigureNotExisting" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite" time="0.001"/>
+  <system-out><![CDATA[Shape Collector Test Suite: begin
+Test #1 : testShowFiguresNoFigures : start
+Test #1 : testShowFiguresNoFigures : end
+Test #2 : testShowFigures : start
+Test #2 : testShowFigures : end
+Test #3 : testAddNullFigure : start
+Test #3 : testAddNullFigure : end
+Test #4 : testRemoveFigure : start
+Test #4 : testRemoveFigure : end
+Test #5 : testAddFigure : start
+Test #5 : testAddFigure : end
+Test #6 : testGetFigureNotExisting : start
+Test #6 : testGetFigureNotExisting : end
+Test #7 : testGetFigure : start
+Test #7 : testGetFigure : end
+Test #8 : testRemoveNullFigure : start
+Test #8 : testRemoveNullFigure : end
+Test #9 : testRemoveFigureNotExisting : start
+Test #9 : testRemoveFigureNotExisting : end
+Shape Collector Test Suite: end
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
