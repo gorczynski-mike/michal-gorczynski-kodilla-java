@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.collection.CollectionTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-04-11T18:33:58" hostname="ann" time="0.013">
+<testsuite name="com.kodilla.testing.collection.CollectionTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-04-12T14:32:08" hostname="ann" time="0.012">
   <properties/>
-  <testcase name="testOddNumbersExterminatorEmptyList" classname="com.kodilla.testing.collection.CollectionTestSuite" time="0.009"/>
+  <testcase name="testOddNumbersExterminatorEmptyList" classname="com.kodilla.testing.collection.CollectionTestSuite" time="0.008"/>
   <testcase name="testOddNumberExterminatoNormalList" classname="com.kodilla.testing.collection.CollectionTestSuite" time="0.004"/>
   <system-out><![CDATA[OddNumberExterminator test: testOddNumbersExterminatorEmptyList: begin
 OddNumberExterminator test: testOddNumbersExterminatorEmptyList: end

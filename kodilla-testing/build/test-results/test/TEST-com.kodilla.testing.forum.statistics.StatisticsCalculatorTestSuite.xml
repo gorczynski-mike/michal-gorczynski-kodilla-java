@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-04-12T14:32:08" hostname="ann" time="0.357">
+  <properties/>
+  <testcase name="testCalculateAdvStatisticsMoreCommentsThanPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.326"/>
+  <testcase name="testCalculateAdvStatisticsZeroComments" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.004"/>
+  <testcase name="testCalculateAdvStatisticsThousandPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.003"/>
+  <testcase name="testCalculateAdvStatisticsLessCommentsThanPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.003"/>
+  <testcase name="testCalculateAdvStatisticsEverythingZero" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.003"/>
+  <testcase name="testCalculateAdvStatisticsHundredUsers" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.004"/>
+  <testcase name="testCalculateAdvStatisticsZeroPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.004"/>
+  <testcase name="testCalculateAdvStatisticsZeroUsers" classname="com.kodilla.testing.forum.statistics.StatisticsCalculatorTestSuite" time="0.004"/>
+  <system-out><![CDATA[StatisticsCalculator Test Suite: begin
+
+Test #1 : testCalculateAdvStatisticsMoreCommentsThanPosts : begin
+Users: 0, posts: 20, comments: 100, avg posts/user: Infinity, avg comments/user: Infinity, avg comments/post: 5.0
+Test #1 : testCalculateAdvStatisticsMoreCommentsThanPosts : end
+
+
+Test #2 : testCalculateAdvStatisticsZeroComments : begin
+Users: 20, posts: 1000, comments: 0, avg posts/user: 50.0, avg comments/user: 0.0, avg comments/post: 0.0
+Test #2 : testCalculateAdvStatisticsZeroComments : end
+
+
+Test #3 : testCalculateAdvStatisticsThousandPosts : begin
+Users: 20, posts: 1000, comments: 100, avg posts/user: 50.0, avg comments/user: 5.0, avg comments/post: 0.1
+Test #3 : testCalculateAdvStatisticsThousandPosts : end
+
+
+Test #4 : testCalculateAdvStatisticsLessCommentsThanPosts : begin
+Users: 0, posts: 100, comments: 20, avg posts/user: Infinity, avg comments/user: Infinity, avg comments/post: 0.2
+Test #4 : testCalculateAdvStatisticsLessCommentsThanPosts : end
+
+
+Test #5 : testCalculateAdvStatisticsEverythingZero : begin
+Users: 0, posts: 0, comments: 0, avg posts/user: NaN, avg comments/user: NaN, avg comments/post: NaN
+Test #5 : testCalculateAdvStatisticsEverythingZero : end
+
+
+Test #6 : testCalculateAdvStatisticsHundredUsers : begin
+Users: 100, posts: 1000, comments: 100, avg posts/user: 10.0, avg comments/user: 1.0, avg comments/post: 0.1
+Test #6 : testCalculateAdvStatisticsHundredUsers : end
+
+
+Test #7 : testCalculateAdvStatisticsZeroPosts : begin
+Users: 20, posts: 0, comments: 100, avg posts/user: 0.0, avg comments/user: 5.0, avg comments/post: Infinity
+Test #7 : testCalculateAdvStatisticsZeroPosts : end
+
+
+Test #8 : testCalculateAdvStatisticsZeroUsers : begin
+Users: 0, posts: 1000, comments: 100, avg posts/user: Infinity, avg comments/user: Infinity, avg comments/post: 0.1
+Test #8 : testCalculateAdvStatisticsZeroUsers : end
+
+StatisticsCalculator Test Suite: end
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
