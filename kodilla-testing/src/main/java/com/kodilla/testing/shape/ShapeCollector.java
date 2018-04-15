@@ -11,7 +11,11 @@ public class ShapeCollector {
         if(shape == null) {
             return false;
         } else {
-            return shapes.add(shape);
+            if(shapes.contains(shape)){
+                return false;
+            } else {
+                return shapes.add(shape);
+            }
         }
     }
 
@@ -37,10 +41,23 @@ public class ShapeCollector {
         } else {
             StringJoiner sj = new StringJoiner(", ");
             for(Shape shape: shapes) {
-                sj.add(shape.getShapeName());
+                sj.add(shape.toString());
             }
             return "Figures: " + sj.toString();
         }
+    }
+
+    public boolean containsFigure(Shape shape){
+        return shapes.contains(shape);
+    }
+
+    public boolean containsFigureReference(Shape shapeTested){
+        for(Shape shape: shapes) {
+            if(shape == shapeTested) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public int getFiguresQuantity() {
