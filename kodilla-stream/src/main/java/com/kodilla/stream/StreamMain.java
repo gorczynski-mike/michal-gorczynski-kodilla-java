@@ -134,5 +134,6 @@ public class StreamMain {
         System.out.println();
         theResultForumUserMap.entrySet().stream()
                 .forEach(System.out::println);
+
     }
 }
