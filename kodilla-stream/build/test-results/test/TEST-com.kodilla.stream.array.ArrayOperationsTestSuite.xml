@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.stream.array.ArrayOperationsTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-04-29T11:12:16" hostname="ann" time="0.075">
+  <properties/>
+  <testcase name="testGetAverage" classname="com.kodilla.stream.array.ArrayOperationsTestSuite" time="0.075"/>
+  <system-out><![CDATA[Numbers given in array: 
+1
+2
+3
+4
+5
+The average is: 3.0
+
+Numbers given in array: 
+The average is: NaN
+
+Numbers given in array: 
+10
+5
+2
+The average is: 5.666666666666667
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
