@@ -12,6 +12,8 @@ public class Application {
         foodOnlineStore.acceptNewOrder(new FoodOrder("A", "A", 2, new ExtraFoodShop()));
         Thread.sleep(4500);
         foodOnlineStore.acceptNewOrder(new FoodOrder("A", "A", 2, new ExtraFoodShop()));
+        foodOnlineStore.acceptNewOrder(new FoodOrder("A", "A", 2, new ExtraFoodShop()));
+        foodOnlineStore.acceptNewOrder(new FoodOrder("A", "A", 2, new ExtraFoodShop()));
     }
 
 }

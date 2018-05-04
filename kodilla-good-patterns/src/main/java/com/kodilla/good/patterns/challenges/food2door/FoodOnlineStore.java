@@ -18,7 +18,13 @@ public class FoodOnlineStore {
             sendMessage("Food online store is now operating and waiting to process orders.");
             while(isOperating) {
                 if (!todayFoodOrders.isEmpty()) {
-                    foodOrderProcessor.processOrder(todayFoodOrders.poll());
+                    FoodOrder foodOrder = todayFoodOrders.poll();
+                    FoodOrderDto foodOrderDto = foodOrderProcessor.processOrder(foodOrder);
+                    if(foodOrderDto.isProcessedSuccessfully()) {
+                        sendMessage("Order: " + foodOrder + " was processed successfully.");
+                    } else {
+                        sendMessage("Order: " + foodOrder + " was rejected.");
+                    }
                 } else {
                     sendMessage("No orders to process. Idle.");
                 }

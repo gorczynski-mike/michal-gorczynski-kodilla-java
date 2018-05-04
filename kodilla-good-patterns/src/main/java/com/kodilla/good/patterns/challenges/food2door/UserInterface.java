@@ -15,6 +15,7 @@ public class UserInterface extends JFrame implements MessageService{
 
         this.foodOnlineStore = foodOnlineStore;
 
+        this.setTitle("Food Online Store");
         this.setLayout(new BorderLayout());
         this.setSize(500, 500);
         this.setLocation(100,100);

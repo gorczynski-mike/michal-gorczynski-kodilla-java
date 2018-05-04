@@ -19,6 +19,7 @@ public class FoodOrderProcessor implements OrderProcessor{
 
     @Override
     public FoodOrderDto processOrder(FoodOrder foodOrder) {
-        return null;
+        return new FoodOrderDto(foodOrder.getCustomer(), foodOrder.getProductName(), foodOrder.getQuantity(),
+                foodOrder.getFoodSupplier(), true);
     }
 }
