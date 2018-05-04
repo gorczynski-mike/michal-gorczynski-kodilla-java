@@ -29,4 +29,14 @@ public class FoodOrder {
     public String getCustomer() {
         return customer;
     }
+
+    @Override
+    public String toString() {
+        return "FoodOrder{" +
+                "customer='" + customer + '\'' +
+                ", productName='" + productName + '\'' +
+                ", quantity=" + quantity +
+                ", foodSupplier=" + foodSupplier +
+                '}';
+    }
 }

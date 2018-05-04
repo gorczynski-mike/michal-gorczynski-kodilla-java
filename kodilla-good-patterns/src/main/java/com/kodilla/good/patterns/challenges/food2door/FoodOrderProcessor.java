@@ -5,6 +5,12 @@ import java.util.List;
 
 public class FoodOrderProcessor implements OrderProcessor{
 
+    private MessageService messageService;
+
+    public FoodOrderProcessor(MessageService messageService) {
+        this.messageService = messageService;
+    }
+
     List<FoodSupplier> suppliers = new ArrayList<>();
 
     {
