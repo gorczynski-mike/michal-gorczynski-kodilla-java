@@ -7,7 +7,7 @@ public class FoodOrderDto {
     private final int quantity;
     private final FoodSupplier foodSupplier;
     private final boolean isProcessedSuccessfully;
-    private String rejectionReason;
+    private String message;
 
     public FoodOrderDto(String customer, String productName, int quantity, FoodSupplier foodSupplier, boolean isProcessedSuccessfully) {
         this.customer = customer;
@@ -15,12 +15,12 @@ public class FoodOrderDto {
         this.quantity = quantity;
         this.foodSupplier = foodSupplier;
         this.isProcessedSuccessfully = isProcessedSuccessfully;
-        this.rejectionReason = null;
+        this.message = null;
     }
 
     public FoodOrderDto(String customer, String productName, int quantity, FoodSupplier foodSupplier, boolean isProcessedSuccessfully, String rejectionReason) {
         this(customer, productName, quantity, foodSupplier, isProcessedSuccessfully);
-        this.rejectionReason = rejectionReason;
+        this.message = rejectionReason;
     }
 
     public String getCustomer() {
@@ -41,5 +41,9 @@ public class FoodOrderDto {
 
     public boolean isProcessedSuccessfully() {
         return isProcessedSuccessfully;
+    }
+
+    public String getMessage() {
+        return message;
     }
 }

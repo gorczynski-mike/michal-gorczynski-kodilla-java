@@ -1,13 +1,14 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-public class ExtraFoodShop implements FoodSupplier {
+public class ExtraFoodShop extends GenericFoodSupplier {
 
-    private final String name = "Extra Food Shop";
+    public ExtraFoodShop() {
+        super("Extra Food Shop", 101);
+    }
 
     @Override
-    public String toString() {
-        return "ExtraFoodShop{" +
-                "name='" + name + '\'' +
-                '}';
+    public FoodSupplierFeedbackDto processOrder(String customer, String productName, int quantity) {
+        return new FoodSupplierFeedbackDto(true, "");
     }
+
 }

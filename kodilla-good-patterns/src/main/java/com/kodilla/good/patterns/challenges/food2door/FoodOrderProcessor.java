@@ -1,25 +1,36 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class FoodOrderProcessor implements OrderProcessor{
 
     private MessageService messageService;
+    private FoodOnlineStore foodOnlineStore;
 
-    public FoodOrderProcessor(MessageService messageService) {
+    public FoodOrderProcessor(MessageService messageService, FoodOnlineStore foodOnlineStore) {
         this.messageService = messageService;
-    }
-
-    List<FoodSupplier> suppliers = new ArrayList<>();
-
-    {
-
+        this.foodOnlineStore = foodOnlineStore;
     }
 
     @Override
     public FoodOrderDto processOrder(FoodOrder foodOrder) {
-        return new FoodOrderDto(foodOrder.getCustomer(), foodOrder.getProductName(), foodOrder.getQuantity(),
-                foodOrder.getFoodSupplier(), true);
+
+        FoodSupplier foodSupplier = foodOrder.getFoodSupplier();
+        String customer = foodOrder.getCustomer();
+        String productName = foodOrder.getProductName();
+        int productQuantity = foodOrder.getQuantity();
+        boolean orderProcessedSuccessfully;
+        String message;
+
+        if(!foodOnlineStore.getFoodSuppliers().contains(foodSupplier)) {
+            orderProcessedSuccessfully = false;
+            message = "Food supplier not found, cannot process order.";
+        } else {
+            FoodSupplierFeedbackDto feedbackDto = foodSupplier.processOrder(foodOrder.getCustomer(), foodOrder.getProductName(),
+                    foodOrder.getQuantity());
+            orderProcessedSuccessfully = feedbackDto.isOrderProcessedSuccessfully();
+            message = feedbackDto.getMessage();
+        }
+
+        return new FoodOrderDto(customer, productName, productQuantity, foodSupplier, orderProcessedSuccessfully, message);
     }
+
 }

@@ -1,6 +1,8 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class FoodOnlineStore {
@@ -8,12 +10,20 @@ public class FoodOnlineStore {
     private static final int MAX_ORDER_QUEUE_SIZE = 10;
 
     private final Queue<FoodOrder> todayFoodOrders = new LinkedList<>();
+    private final List<GenericFoodSupplier> foodSuppliers = new ArrayList<>();
     UserInterface userInterface = new UserInterface(this);
     MessageService messageService = userInterface;
-    private final OrderProcessor foodOrderProcessor = new FoodOrderProcessor(userInterface);
+    private final OrderProcessor foodOrderProcessor = new FoodOrderProcessor(userInterface, this);
     private boolean isOperating = true;
 
+    {
+        addFoodSupplier(new ExtraFoodShop());
+        addFoodSupplier(new GlutenFreeShop());
+        addFoodSupplier(new HealthyShop());
+    }
+
     public FoodOnlineStore() {
+
         Thread foodOnlineStoreThread = new Thread(() -> {
             sendMessage("Food online store is now operating and waiting to process orders.");
             while(isOperating) {
@@ -39,7 +49,7 @@ public class FoodOnlineStore {
                 foodOrderProcessor.processOrder(todayFoodOrders.poll());
                 sendMessage("Orders waiting in queue: " + todayFoodOrders.size());
                 try {
-                    Thread.sleep(400);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -70,6 +80,18 @@ public class FoodOnlineStore {
     private void sendMessage(String message) {
         System.out.println(message);
         messageService.acceptMessage(message);
+    }
+
+    public boolean addFoodSupplier(GenericFoodSupplier foodSupplier) {
+        return this.foodSuppliers.add(foodSupplier);
+    }
+
+    public boolean removeFoodSupplier(GenericFoodSupplier foodSupplier) {
+        return this.foodSuppliers.remove(foodSupplier);
+    }
+
+    public List<GenericFoodSupplier> getFoodSuppliers() {
+        return new ArrayList<>(foodSuppliers);
     }
 
 }
