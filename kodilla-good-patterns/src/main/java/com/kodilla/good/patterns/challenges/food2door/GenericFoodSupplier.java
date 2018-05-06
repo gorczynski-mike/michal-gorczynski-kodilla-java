@@ -5,6 +5,8 @@ import java.util.Objects;
 /**
  * Every FoodSupplier must extend this class. To create a new store you must provide its name and override
  * FoodSupplier interface method: FoodOrderFeedbackDto processOrder(FoodOrderDto foodOrderDto);
+ * Every food supplier can use our FoodOrderReturnCodes in the feedback object - list of codes and their meaning
+ * will be emailed to store after it's requested.
  */
 public abstract class GenericFoodSupplier implements FoodSupplier {
 

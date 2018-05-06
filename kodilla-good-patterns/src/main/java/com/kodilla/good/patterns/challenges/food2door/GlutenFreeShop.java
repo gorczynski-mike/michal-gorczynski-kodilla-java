@@ -2,6 +2,9 @@ package com.kodilla.good.patterns.challenges.food2door;
 
 import java.util.Map;
 
+/**
+ * Gluten free shop will reject any order with product name containing word "gluten"
+ */
 public class GlutenFreeShop extends GenericFoodSupplier {
 
     public GlutenFreeShop() {

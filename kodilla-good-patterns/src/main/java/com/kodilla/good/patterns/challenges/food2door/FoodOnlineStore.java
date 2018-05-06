@@ -21,7 +21,7 @@ public class FoodOnlineStore {
     private boolean isClosed = false;
 
     {
-        addFoodSupplier(new ExtraFoodShop());
+        addFoodSupplier(new EvenFoodShop());
         addFoodSupplier(new GlutenFreeShop());
         addFoodSupplier(new HealthyShop());
     }
@@ -107,4 +107,13 @@ public class FoodOnlineStore {
         return new ArrayList<>(foodSuppliers);
     }
 
+    public GenericFoodSupplier getFoodSupplier(String foodSupplierName) {
+        GenericFoodSupplier result = null;
+        for(GenericFoodSupplier supplier: foodSuppliers) {
+            if(supplier.getFoodSupplierName().equalsIgnoreCase(foodSupplierName)) {
+                result = supplier;
+            }
+        }
+        return result;
+    }
 }

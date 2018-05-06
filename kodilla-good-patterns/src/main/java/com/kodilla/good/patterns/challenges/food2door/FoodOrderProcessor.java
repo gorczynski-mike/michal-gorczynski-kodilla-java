@@ -16,29 +16,32 @@ public class FoodOrderProcessor implements OrderProcessor{
         FoodSupplier foodSupplier = foodOrder.getFoodSupplier();
         FoodOrderDto foodOrderDto = new FoodOrderDto(foodOrder);
 
-        if(!foodOnlineStore.getFoodSuppliers().contains(foodSupplier)) {
-            sendInfoOrderRejected(foodOrder, "No such supplier", FoodOrderReturnCode.NO_SUCH_SUPPLIER);
+        if (!foodOnlineStore.getFoodSuppliers().contains(foodSupplier)) {
+            sendFeedbackInfo(false, foodOrder, "No such supplier", FoodOrderReturnCode.NO_SUCH_SUPPLIER);
             return false;
         } else {
             FoodOrderFeedbackDto foodOrderFeedbackDto = foodSupplier.processOrder(foodOrderDto);
-            if(foodOrderFeedbackDto.isOrderProcessedSuccessfully()) {
-                sendInfoOrderAccepted(foodOrder);
-                return true;
-            } else {
-                sendInfoOrderRejected(foodOrder, foodOrderFeedbackDto.getMessage(), foodOrderFeedbackDto.getReturnCode());
-                return false;
-            }
+            boolean isOrderProcessedOk = foodOrderFeedbackDto.isOrderProcessedSuccessfully();
+            sendFeedbackInfo(isOrderProcessedOk,
+                    foodOrder,
+                    foodOrderFeedbackDto.getMessage(),
+                    foodOrderFeedbackDto.getReturnCode());
+            return isOrderProcessedOk;
         }
     }
 
-    private void sendInfoOrderAccepted(FoodOrder foodOrder) {
-        messageService.acceptMessage("Order: " + foodOrder + " was processed successfully.");
-    }
-
-    private void sendInfoOrderRejected(FoodOrder foodOrder, String message, FoodOrderReturnCode returnCode) {
-        messageService.acceptMessage("Order: " + foodOrder + " was rejected.");
-        messageService.acceptMessage("Rejection message: " + message);
-        messageService.acceptMessage("Rejection code: " + returnCode);
+    private void sendFeedbackInfo(boolean processedOK, FoodOrder foodOrder, String message, FoodOrderReturnCode returnCode) {
+        if(processedOK) {
+            messageService.acceptMessage("Order: " + foodOrder + " was processed successfully.");
+        } else {
+            messageService.acceptMessage("Order: " + foodOrder + " was rejected.");
+        }
+        if (message != null && !message.equals("")) {
+            messageService.acceptMessage("Return message: " + message);
+        }
+        if (returnCode != null && !returnCode.equals(FoodOrderReturnCode.NULL)) {
+            messageService.acceptMessage("Return code: " + returnCode);
+        }
     }
 
 }

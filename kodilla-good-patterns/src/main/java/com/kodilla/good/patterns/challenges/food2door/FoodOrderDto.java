@@ -18,7 +18,7 @@ public class FoodOrderDto {
         this.productName = productName;
         this.quantity = quantity;
         for(FoodOrderReturnCode returnCode : FoodOrderReturnCode.values()) {
-            returnCodes.put(returnCode.getRejectionCode(), returnCode);
+            returnCodes.put(returnCode.getReturnCode(), returnCode);
         }
     }
 
