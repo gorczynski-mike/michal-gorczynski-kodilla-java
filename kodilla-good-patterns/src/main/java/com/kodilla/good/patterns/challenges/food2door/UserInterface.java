@@ -13,6 +13,8 @@ public class UserInterface extends JFrame implements MessageService{
     private JButton closeStore;
     private JButton sendNewOrder;
     private JButton sendNewCustomOrder;
+    private JButton changeFontSize;
+    private JSlider changeFontSizeSlider;
 
     public UserInterface(FoodOnlineStore foodOnlineStore) {
 
@@ -43,6 +45,16 @@ public class UserInterface extends JFrame implements MessageService{
         sendNewCustomOrder = new JButton("Send new custom order to the store");
         sendNewCustomOrder.addActionListener(event -> new NewOrderFrame());
         controlPanel.add(sendNewCustomOrder);
+
+        changeFontSizeSlider = new JSlider(SwingConstants.HORIZONTAL, 0, 40, 20);
+        controlPanel.add(changeFontSizeSlider);
+        changeFontSize = new JButton("Change font size");
+        changeFontSize.addActionListener(event -> {
+            this.outputTextArea.setFont(
+                this.outputTextArea.getFont().deriveFont((float)changeFontSizeSlider.getValue())
+            );
+        });
+        controlPanel.add(changeFontSize);
 
         this.getContentPane().add(new JScrollPane(controlPanel), BorderLayout.SOUTH);
 
