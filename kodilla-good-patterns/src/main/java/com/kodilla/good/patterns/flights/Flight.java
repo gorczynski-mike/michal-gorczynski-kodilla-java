@@ -4,8 +4,11 @@ import java.util.Objects;
 
 public class Flight {
 
+    private static int totalFlights = 100;
+
     private final String fromCity;
     private final String toCity;
+    private final int flightNumber;
 
     public Flight(final String fromCity, final String toCity) {
         if(fromCity.equalsIgnoreCase(toCity)) {
@@ -13,6 +16,7 @@ public class Flight {
         }
         this.fromCity = fromCity;
         this.toCity = toCity;
+        this.flightNumber = totalFlights++;
     }
 
     public String getFromCity() {
@@ -25,10 +29,7 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Flight{" +
-                "fromCity='" + fromCity + '\'' +
-                ", toCity='" + toCity + '\'' +
-                '}';
+        return "Flight" + flightNumber + "{" + fromCity + " to " + toCity + "}";
     }
 
     @Override
@@ -42,7 +43,6 @@ public class Flight {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(fromCity, toCity);
     }
 }

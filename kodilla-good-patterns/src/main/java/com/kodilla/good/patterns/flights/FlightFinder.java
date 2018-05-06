@@ -33,8 +33,8 @@ public class FlightFinder {
         return result;
     }
 
-    public List<AbstractMap.SimpleEntry<Flight, Flight>> findFlightsFromCityToCityOneStop(String startCity, String endCity) {
-        List<AbstractMap.SimpleEntry<Flight, Flight>> result = new ArrayList<>();
+    public List<Journey> findFlightsFromCityToCityOneStop(String startCity, String endCity) {
+        List<Journey> result = new ArrayList<>();
         Set<Flight> flightsFromStartCity = findAllFlightsFromCity(startCity);
         Set<Flight> flightsToEndCity = findAllFlightsToCity(endCity);
 
@@ -44,7 +44,7 @@ public class FlightFinder {
                     continue;
                 }
                 if(flight1.getToCity().equalsIgnoreCase(flight2.getFromCity())) {
-                    result.add(new AbstractMap.SimpleEntry<>(flight1, flight2));
+                    result.add(new Journey(flight1, flight2));
                 }
             }
         }
