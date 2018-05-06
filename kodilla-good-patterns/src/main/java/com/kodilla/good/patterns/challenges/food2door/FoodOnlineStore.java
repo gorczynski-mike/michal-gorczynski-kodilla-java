@@ -91,8 +91,8 @@ public class FoodOnlineStore {
     }
 
     private void sendMessage(String message) {
-        System.out.println(message);
-        messageService.acceptMessage(message);
+        System.out.println("STORE INFO: " + message);
+        messageService.acceptMessage("STORE INFO: " + message);
     }
 
     public boolean addFoodSupplier(GenericFoodSupplier foodSupplier) {

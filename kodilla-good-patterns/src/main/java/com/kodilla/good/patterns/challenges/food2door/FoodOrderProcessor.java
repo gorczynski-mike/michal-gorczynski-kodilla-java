@@ -16,6 +16,7 @@ public class FoodOrderProcessor implements OrderProcessor{
         FoodSupplier foodSupplier = foodOrder.getFoodSupplier();
         FoodOrderDto foodOrderDto = new FoodOrderDto(foodOrder);
 
+        senMessage("Processing order: " + foodOrder);
         if (!foodOnlineStore.getFoodSuppliers().contains(foodSupplier)) {
             sendFeedbackInfo(false, foodOrder, "No such supplier", FoodOrderReturnCode.NO_SUCH_SUPPLIER);
             return false;
@@ -32,16 +33,20 @@ public class FoodOrderProcessor implements OrderProcessor{
 
     private void sendFeedbackInfo(boolean processedOK, FoodOrder foodOrder, String message, FoodOrderReturnCode returnCode) {
         if(processedOK) {
-            messageService.acceptMessage("Order: " + foodOrder + " was processed successfully.");
+            senMessage("Order: " + foodOrder + " was processed successfully.");
         } else {
-            messageService.acceptMessage("Order: " + foodOrder + " was rejected.");
+            senMessage("Order: " + foodOrder + " was rejected.");
         }
         if (message != null && !message.equals("")) {
-            messageService.acceptMessage("Return message: " + message);
+            senMessage("Return message: " + message);
         }
         if (returnCode != null && !returnCode.equals(FoodOrderReturnCode.NULL)) {
-            messageService.acceptMessage("Return code: " + returnCode);
+            senMessage("Return code: " + returnCode);
         }
+    }
+
+    private void senMessage(String message) {
+        messageService.acceptMessage("ORDER PROCESSOR INFO: " + message);
     }
 
 }

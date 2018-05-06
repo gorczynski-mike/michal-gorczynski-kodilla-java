@@ -25,7 +25,7 @@ public class EvenFoodShop extends GenericFoodSupplier {
                     foodOrderDto.getReturnCodes().get(301));
         } else if(!(productQuantity % 2 == 0)) {
             return new FoodOrderFeedbackDto(false, "We only supply even quantities.",
-                    foodOrderDto.getReturnCodes().get(202));
+                    foodOrderDto.getReturnCodes().get(103));
         } else {
             return new FoodOrderFeedbackDto(true, "Order processed ok",
                     foodOrderDto.getReturnCodes().get(1));
