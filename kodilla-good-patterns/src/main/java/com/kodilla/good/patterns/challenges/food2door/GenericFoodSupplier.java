@@ -15,8 +15,8 @@ public abstract class GenericFoodSupplier implements  FoodSupplier {
     @Override
     public String toString() {
         return "FoodSupplier{" +
-                "foodSupplierName='" + foodSupplierName + '\'' +
-                ", foodSupplierId=" + foodSupplierId +
+                foodSupplierName +
+                ", Id=" + foodSupplierId +
                 '}';
     }
 

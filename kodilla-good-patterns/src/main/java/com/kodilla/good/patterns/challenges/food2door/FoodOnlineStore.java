@@ -15,6 +15,7 @@ public class FoodOnlineStore {
     MessageService messageService = userInterface;
     private final OrderProcessor foodOrderProcessor = new FoodOrderProcessor(userInterface, this);
     private boolean isOperating = true;
+    private boolean isClosed = false;
 
     {
         addFoodSupplier(new ExtraFoodShop());
@@ -28,13 +29,7 @@ public class FoodOnlineStore {
             sendMessage("Food online store is now operating and waiting to process orders.");
             while(isOperating) {
                 if (!todayFoodOrders.isEmpty()) {
-                    FoodOrder foodOrder = todayFoodOrders.poll();
-                    FoodOrderDto foodOrderDto = foodOrderProcessor.processOrder(foodOrder);
-                    if(foodOrderDto.isProcessedSuccessfully()) {
-                        sendMessage("Order: " + foodOrder + " was processed successfully.");
-                    } else {
-                        sendMessage("Order: " + foodOrder + " was rejected.");
-                    }
+                    processOneOrder();
                 } else {
                     sendMessage("No orders to process. Idle.");
                 }
@@ -46,7 +41,7 @@ public class FoodOnlineStore {
                 sendMessage("Orders waiting in queue: " + todayFoodOrders.size());
             }
             while(!todayFoodOrders.isEmpty()) {
-                foodOrderProcessor.processOrder(todayFoodOrders.poll());
+                processOneOrder();
                 sendMessage("Orders waiting in queue: " + todayFoodOrders.size());
                 try {
                     Thread.sleep(2000);
@@ -54,13 +49,17 @@ public class FoodOnlineStore {
                     e.printStackTrace();
                 }
             }
-            sendMessage("Closing business. See you tomorrow!");
+            sendMessage("Business is closed. See you tomorrow!");
+            isClosed = true;
         });
         foodOnlineStoreThread.start();
     }
 
     public boolean acceptNewOrder(FoodOrder foodOrder) {
-        if(!isOperating) {
+        if(isClosed) {
+            sendMessage("Sorry, business is closed. Place your order tomorrow.");
+            return false;
+        } else if(!isOperating) {
             sendMessage("Sorry, business is closing and not accepting new orders. Place your order tomorrow.");
             return false;
         } else if(todayFoodOrders.size() >= MAX_ORDER_QUEUE_SIZE) {
@@ -72,9 +71,25 @@ public class FoodOnlineStore {
         }
     }
 
+    private void processOneOrder() {
+        FoodOrder foodOrder = todayFoodOrders.poll();
+        FoodOrderDto foodOrderDto = foodOrderProcessor.processOrder(foodOrder);
+        if(foodOrderDto.isProcessedSuccessfully()) {
+            sendMessage("Order: " + foodOrder + " was processed successfully.");
+        } else {
+            sendMessage("Order: " + foodOrder + " was rejected.");
+        }
+    }
+
     public void stopOperating() {
-        this.isOperating = false;
-        sendMessage("Business is closing, it will not accept any more orders today. You can place orders tomorrow.");
+        if(isClosed == true) {
+            sendMessage("Business is already closed.");
+        } else if (!isOperating) {
+            sendMessage("Business is already closing down.");
+        } else {
+            this.isOperating = false;
+            sendMessage("Business is closing, it will not accept any more orders today. You can place orders tomorrow.");
+        }
     }
 
     private void sendMessage(String message) {

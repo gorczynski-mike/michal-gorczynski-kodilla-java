@@ -2,6 +2,8 @@ package com.kodilla.good.patterns.challenges.food2door;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserInterface extends JFrame implements MessageService{
 
@@ -24,6 +26,7 @@ public class UserInterface extends JFrame implements MessageService{
 
         outputTextArea = new JTextArea(30,60);
         outputTextArea.setEditable(false);
+        outputTextArea.setFont(outputTextArea.getFont().deriveFont(16f));
         this.getContentPane().add(new JScrollPane(outputTextArea), BorderLayout.CENTER);
 
         controlPanel = new JPanel(new FlowLayout());
@@ -67,11 +70,11 @@ public class UserInterface extends JFrame implements MessageService{
         private JPanel productPanel = new JPanel();
 
         private JLabel quantityLabel = new JLabel("Quantity: ");
-        private JComboBox<Integer> quantityField = new JComboBox<>(new Integer[] {1,2,3,4,5,6,7,8,9,10});
+        JSlider quantitySlider = new JSlider(JSlider.HORIZONTAL,1, 10, 1);
         private JPanel quantityPanel = new JPanel();
 
         private JLabel supplierLabel = new JLabel("Supplier: ");
-        private JComboBox<GenericFoodSupplier> supplierField = new JComboBox<>(foodOnlineStore.getFoodSuppliers().toArray(new GenericFoodSupplier[]{}));
+        private JComboBox<String> supplierField;
         private JPanel supplierPanel = new JPanel();
 
         private JButton sendOrderButton = new JButton("Send order");
@@ -86,7 +89,18 @@ public class UserInterface extends JFrame implements MessageService{
             productPanel.add(productLabel);
             productPanel.add(productField);
             quantityPanel.add(quantityLabel);
-            quantityPanel.add(quantityField);
+            quantitySlider.setMinorTickSpacing(1);
+            quantitySlider.setMajorTickSpacing(2);
+            quantitySlider.setPaintTicks(true);
+            quantitySlider.setPaintLabels(true);
+            quantityPanel.add(quantitySlider);
+
+            Map<String, FoodSupplier> supplierNameToSupplier = new HashMap<>();
+            foodOnlineStore.getFoodSuppliers().stream().forEach(supplier -> {
+                supplierNameToSupplier.put(supplier.getFoodSupplierName(), supplier);
+            });
+            String[] supplierNames = supplierNameToSupplier.keySet().toArray(new String[]{});
+            supplierField = new JComboBox<>(supplierNames);
             supplierPanel.add(supplierLabel);
             supplierPanel.add(supplierField);
 
@@ -94,8 +108,8 @@ public class UserInterface extends JFrame implements MessageService{
                 foodOnlineStore.acceptNewOrder(new FoodOrder(
                         customerField.getText(),
                         productField.getText(),
-                        quantityField.getItemAt(quantityField.getSelectedIndex()),
-                        supplierField.getItemAt(supplierField.getSelectedIndex())));
+                        quantitySlider.getValue(),
+                        supplierNameToSupplier.get(supplierField.getItemAt(supplierField.getSelectedIndex()))));
             });
             closeButton.addActionListener(e -> this.dispose());
             buttons.add(sendOrderButton);
