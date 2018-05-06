@@ -29,4 +29,8 @@ public class FoodOrderFeedbackDto {
     public String getMessage() {
         return message;
     }
+
+    public FoodOrderReturnCode getReturnCode() {
+        return returnCode;
+    }
 }

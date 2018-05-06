@@ -57,7 +57,8 @@ public class UserInterface extends JFrame implements MessageService{
     }
 
     private FoodOrder getSampleFoodOrder() {
-        return new FoodOrder("Customer", "Product name", 2, new ExtraFoodShop());
+        return new FoodOrder("Customer", "Product name", 2,
+                foodOnlineStore.getFoodSuppliers().get(0));
     }
 
     private class NewOrderFrame extends JFrame {

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Unlike FoodOrder it doesn't have supplier field and it provides list of return codes to supplier. Use it to
+ * Unlike FoodOrder it doesn't have supplier field and it provides list of valid return codes to supplier. Use it to
  * communicate with FoodSuppliers.
  */
 public class FoodOrderDto {

@@ -5,14 +5,17 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Store main class, it contains the main Thread and main logic of the store.
+ */
 public class FoodOnlineStore {
 
     private static final int MAX_ORDER_QUEUE_SIZE = 10;
 
     private final Queue<FoodOrder> todayFoodOrders = new LinkedList<>();
     private final List<GenericFoodSupplier> foodSuppliers = new ArrayList<>();
-    UserInterface userInterface = new UserInterface(this);
-    MessageService messageService = userInterface;
+    private UserInterface userInterface = new UserInterface(this);
+    private MessageService messageService = userInterface;
     private final OrderProcessor foodOrderProcessor = new FoodOrderProcessor(userInterface, this);
     private boolean isOperating = true;
     private boolean isClosed = false;
@@ -73,12 +76,7 @@ public class FoodOnlineStore {
 
     private void processOneOrder() {
         FoodOrder foodOrder = todayFoodOrders.poll();
-        FoodOrderFeedbackDto foodOrderFeedbackDto = foodOrderProcessor.processOrder(foodOrder);
-        if(foodOrderFeedbackDto.isOrderProcessedSuccessfully()) {
-            sendMessage("Order: " + foodOrder + " was processed successfully.");
-        } else {
-            sendMessage("Order: " + foodOrder + " was rejected.");
-        }
+        foodOrderProcessor.processOrder(foodOrder);
     }
 
     public void stopOperating() {
