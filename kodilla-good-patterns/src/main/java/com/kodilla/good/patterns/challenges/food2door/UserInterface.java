@@ -14,7 +14,8 @@ public class UserInterface extends JFrame implements MessageService{
     private JButton closeStore;
     private JButton sendNewOrder;
     private JButton sendNewCustomOrder;
-    private JButton changeFontSize;
+    private JPanel changeFontPanel;
+    private JButton changeFontSizeButton;
     private JSlider changeFontSizeSlider;
 
     public UserInterface(FoodOnlineStore foodOnlineStore) {
@@ -23,7 +24,7 @@ public class UserInterface extends JFrame implements MessageService{
 
         this.setTitle("Food Online Store");
         this.setLayout(new BorderLayout());
-        this.setSize(500, 500);
+        this.setMinimumSize(new Dimension(650, 400));
         this.setLocation(100,100);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -33,7 +34,7 @@ public class UserInterface extends JFrame implements MessageService{
         this.getContentPane().add(new JScrollPane(outputTextArea), BorderLayout.CENTER);
 
         controlPanel = new JPanel(new FlowLayout());
-        controlPanel.setMinimumSize(new Dimension(0, 70));
+        controlPanel.setPreferredSize(new Dimension(0, 80));
 
         closeStore = new JButton("Close the store");
         closeStore.addActionListener(event -> foodOnlineStore.stopOperating());
@@ -48,19 +49,21 @@ public class UserInterface extends JFrame implements MessageService{
         sendNewCustomOrder.addActionListener(event -> new NewOrderFrame());
         controlPanel.add(sendNewCustomOrder);
 
+        changeFontPanel = new JPanel();
         changeFontSizeSlider = new JSlider(SwingConstants.HORIZONTAL, 0, 40, 20);
-        controlPanel.add(changeFontSizeSlider);
-        changeFontSize = new JButton("Change font size");
-        changeFontSize.addActionListener(event -> {
+        changeFontPanel.add(changeFontSizeSlider);
+        changeFontSizeButton = new JButton("Change font size");
+        changeFontSizeButton.addActionListener(event -> {
             this.outputTextArea.setFont(
                 this.outputTextArea.getFont().deriveFont((float)changeFontSizeSlider.getValue())
             );
         });
-        controlPanel.add(changeFontSize);
+        changeFontPanel.add(changeFontSizeButton);
+        controlPanel.add(changeFontPanel);
 
         controlPanelScrollPane = new JScrollPane(controlPanel);
         controlPanelScrollPane.setMinimumSize(new Dimension(0, 80));
-        this.getContentPane().add(controlPanelScrollPane, BorderLayout.SOUTH);
+        this.getContentPane().add(controlPanel, BorderLayout.SOUTH);
 
         this.pack();
         this.setVisible(true);
@@ -73,7 +76,7 @@ public class UserInterface extends JFrame implements MessageService{
     }
 
     private FoodOrder getSampleFoodOrder() {
-        return new FoodOrder("Customer", "Product name", 2,
+        return new FoodOrder("Sample Customer", "Sample Product", 2,
                 foodOnlineStore.getFoodSuppliers().get(0));
     }
 
