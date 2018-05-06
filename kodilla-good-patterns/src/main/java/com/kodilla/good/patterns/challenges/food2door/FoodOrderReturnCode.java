@@ -3,6 +3,7 @@ package com.kodilla.good.patterns.challenges.food2door;
 public enum FoodOrderReturnCode {
     NULL(0),
     ALL_OK_ORDER_ACCEPTED(1),
+    NO_SUCH_SUPPLIER(2),
     NO_SUCH_PRODUCT(101),
     NOT_ENOUGH_IN_STOCK(102),
     NOT_LUXURY_ENOUGH(201),

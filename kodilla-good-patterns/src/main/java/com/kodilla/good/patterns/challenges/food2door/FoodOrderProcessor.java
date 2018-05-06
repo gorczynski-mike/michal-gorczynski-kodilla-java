@@ -11,26 +11,17 @@ public class FoodOrderProcessor implements OrderProcessor{
     }
 
     @Override
-    public FoodOrderDto processOrder(FoodOrder foodOrder) {
+    public FoodOrderFeedbackDto processOrder(FoodOrder foodOrder) {
 
         FoodSupplier foodSupplier = foodOrder.getFoodSupplier();
-        String customer = foodOrder.getCustomer();
-        String productName = foodOrder.getProductName();
-        int productQuantity = foodOrder.getQuantity();
-        boolean orderProcessedSuccessfully;
-        String message;
+        FoodOrderDto foodOrderDto = new FoodOrderDto(foodOrder);
 
         if(!foodOnlineStore.getFoodSuppliers().contains(foodSupplier)) {
-            orderProcessedSuccessfully = false;
-            message = "Food supplier not found, cannot process order.";
+            return new FoodOrderFeedbackDto(foodOrderDto, false, "No such supplier",
+                    FoodOrderReturnCode.NO_SUCH_SUPPLIER);
         } else {
-            FoodSupplierFeedbackDto feedbackDto = foodSupplier.processOrder(foodOrder.getCustomer(), foodOrder.getProductName(),
-                    foodOrder.getQuantity());
-            orderProcessedSuccessfully = feedbackDto.isOrderProcessedSuccessfully();
-            message = feedbackDto.getMessage();
+            return foodSupplier.processOrder(foodOrderDto);
         }
-
-        return new FoodOrderDto(customer, productName, productQuantity, foodSupplier, orderProcessedSuccessfully, message);
     }
 
 }

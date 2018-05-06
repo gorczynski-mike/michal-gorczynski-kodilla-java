@@ -5,22 +5,17 @@ public class FoodOrderDto {
     private final String customer;
     private final String productName;
     private final int quantity;
-    private final FoodSupplier foodSupplier;
-    private final boolean isProcessedSuccessfully;
-    private String message;
 
-    public FoodOrderDto(String customer, String productName, int quantity, FoodSupplier foodSupplier, boolean isProcessedSuccessfully) {
+    public FoodOrderDto(FoodOrder foodOrder) {
+        this.customer = foodOrder.getCustomer();
+        this.productName = foodOrder.getProductName();
+        this.quantity = foodOrder.getQuantity();
+    }
+
+    public FoodOrderDto(String customer, String productName, int quantity, FoodSupplier foodSupplier) {
         this.customer = customer;
         this.productName = productName;
         this.quantity = quantity;
-        this.foodSupplier = foodSupplier;
-        this.isProcessedSuccessfully = isProcessedSuccessfully;
-        this.message = null;
-    }
-
-    public FoodOrderDto(String customer, String productName, int quantity, FoodSupplier foodSupplier, boolean isProcessedSuccessfully, String rejectionReason) {
-        this(customer, productName, quantity, foodSupplier, isProcessedSuccessfully);
-        this.message = rejectionReason;
     }
 
     public String getCustomer() {
@@ -35,15 +30,4 @@ public class FoodOrderDto {
         return quantity;
     }
 
-    public FoodSupplier getFoodSupplier() {
-        return foodSupplier;
-    }
-
-    public boolean isProcessedSuccessfully() {
-        return isProcessedSuccessfully;
-    }
-
-    public String getMessage() {
-        return message;
-    }
 }

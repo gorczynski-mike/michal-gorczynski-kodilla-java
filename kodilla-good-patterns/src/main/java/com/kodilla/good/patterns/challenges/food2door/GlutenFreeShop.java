@@ -7,7 +7,7 @@ public class GlutenFreeShop extends GenericFoodSupplier {
     }
 
     @Override
-    public FoodSupplierFeedbackDto processOrder(String customer, String productName, int quantity) {
-        return new FoodSupplierFeedbackDto(true, "");
+    public FoodOrderFeedbackDto processOrder(FoodOrderDto foodOrderDto) {
+        return new FoodOrderFeedbackDto(foodOrderDto, true);
     }
 }

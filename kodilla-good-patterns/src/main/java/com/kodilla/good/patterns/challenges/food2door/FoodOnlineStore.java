@@ -73,8 +73,8 @@ public class FoodOnlineStore {
 
     private void processOneOrder() {
         FoodOrder foodOrder = todayFoodOrders.poll();
-        FoodOrderDto foodOrderDto = foodOrderProcessor.processOrder(foodOrder);
-        if(foodOrderDto.isProcessedSuccessfully()) {
+        FoodOrderFeedbackDto foodOrderFeedbackDto = foodOrderProcessor.processOrder(foodOrder);
+        if(foodOrderFeedbackDto.isOrderProcessedSuccessfully()) {
             sendMessage("Order: " + foodOrder + " was processed successfully.");
         } else {
             sendMessage("Order: " + foodOrder + " was rejected.");
