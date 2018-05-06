@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Journey consists of one or more flights to get from one city to another
+ */
 public class Journey {
 
     private final String fromCity;

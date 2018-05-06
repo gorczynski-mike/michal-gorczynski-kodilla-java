@@ -2,6 +2,9 @@ package com.kodilla.good.patterns.flights;
 
 import java.util.Objects;
 
+/**
+ * A single flight from one city to another
+ */
 public class Flight {
 
     private static int totalFlights = 100;
