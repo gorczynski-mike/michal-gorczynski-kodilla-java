@@ -10,6 +10,7 @@ public class UserInterface extends JFrame implements MessageService{
     private FoodOnlineStore foodOnlineStore;
     private JTextArea outputTextArea;
     private JPanel controlPanel;
+    private JScrollPane controlPanelScrollPane;
     private JButton closeStore;
     private JButton sendNewOrder;
     private JButton sendNewCustomOrder;
@@ -32,6 +33,7 @@ public class UserInterface extends JFrame implements MessageService{
         this.getContentPane().add(new JScrollPane(outputTextArea), BorderLayout.CENTER);
 
         controlPanel = new JPanel(new FlowLayout());
+        controlPanel.setMinimumSize(new Dimension(0, 70));
 
         closeStore = new JButton("Close the store");
         closeStore.addActionListener(event -> foodOnlineStore.stopOperating());
@@ -56,7 +58,9 @@ public class UserInterface extends JFrame implements MessageService{
         });
         controlPanel.add(changeFontSize);
 
-        this.getContentPane().add(new JScrollPane(controlPanel), BorderLayout.SOUTH);
+        controlPanelScrollPane = new JScrollPane(controlPanel);
+        controlPanelScrollPane.setMinimumSize(new Dimension(0, 80));
+        this.getContentPane().add(controlPanelScrollPane, BorderLayout.SOUTH);
 
         this.pack();
         this.setVisible(true);
