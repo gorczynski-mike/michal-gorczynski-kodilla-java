@@ -8,6 +8,6 @@ public class GlutenFreeShop extends GenericFoodSupplier {
 
     @Override
     public FoodOrderFeedbackDto processOrder(FoodOrderDto foodOrderDto) {
-        return new FoodOrderFeedbackDto(foodOrderDto, true);
+        return new FoodOrderFeedbackDto(true);
     }
 }
