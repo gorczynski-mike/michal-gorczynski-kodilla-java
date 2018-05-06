@@ -2,14 +2,20 @@ package com.kodilla.good.patterns.challenges.food2door;
 
 import java.util.Objects;
 
-public abstract class GenericFoodSupplier implements  FoodSupplier {
+/**
+ * Every FoodSupplier must extend this class. To create a new store you must provide its name and override
+ * FoodSupplier interface method: FoodOrderFeedbackDto processOrder(FoodOrderDto foodOrderDto);
+ */
+public abstract class GenericFoodSupplier implements FoodSupplier {
+
+    private static int nextFoodSupplierId = 100;
 
     final String foodSupplierName;
     final int foodSupplierId;
 
-    public GenericFoodSupplier(String foodSupplierName, int foodSupplierId) {
+    public GenericFoodSupplier(String foodSupplierName) {
         this.foodSupplierName = foodSupplierName;
-        this.foodSupplierId = foodSupplierId;
+        this.foodSupplierId = nextFoodSupplierId++;
     }
 
     @Override

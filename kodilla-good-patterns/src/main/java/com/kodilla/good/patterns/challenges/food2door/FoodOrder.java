@@ -1,5 +1,9 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
+/**
+ * Similar to FoodOrderDto but it is intended to use within application only. Do not use it to communicate with
+ * FoodSuppliers.
+ */
 public class FoodOrder {
 
     private final String customer;

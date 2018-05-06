@@ -3,7 +3,7 @@ package com.kodilla.good.patterns.challenges.food2door;
 public class ExtraFoodShop extends GenericFoodSupplier {
 
     public ExtraFoodShop() {
-        super("Extra Food Shop", 101);
+        super("Extra Food Shop");
     }
 
     @Override
