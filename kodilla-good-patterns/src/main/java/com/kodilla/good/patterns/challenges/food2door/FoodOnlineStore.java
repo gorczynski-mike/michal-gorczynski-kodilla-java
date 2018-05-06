@@ -66,7 +66,7 @@ public class FoodOnlineStore {
             sendMessage("Sorry, the order queue is full, try again in a moment.");
             return false;
         }else {
-            sendMessage("Accepting new food order: " + foodOrder);
+            sendMessage(String.format("Accepting new food order: %n\t%s", foodOrder));
             return todayFoodOrders.offer(foodOrder);
         }
     }

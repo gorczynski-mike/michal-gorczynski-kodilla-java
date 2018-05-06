@@ -32,11 +32,6 @@ public class FoodOrder {
 
     @Override
     public String toString() {
-        return "FoodOrder{" +
-                "customer='" + customer + '\'' +
-                ", productName='" + productName + '\'' +
-                ", quantity=" + quantity +
-                ", foodSupplier=" + foodSupplier +
-                '}';
+        return "FoodOrder{" + quantity + " of '" + productName + "' to '" + customer + "' from " + foodSupplier + "}";
     }
 }

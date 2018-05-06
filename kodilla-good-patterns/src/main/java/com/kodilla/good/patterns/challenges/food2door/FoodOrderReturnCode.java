@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-public enum FoodOrderRejectionReason {
+public enum FoodOrderReturnCode {
     NULL(0),
     ALL_OK_ORDER_ACCEPTED(1),
     NO_SUCH_PRODUCT(101),
@@ -11,7 +11,7 @@ public enum FoodOrderRejectionReason {
 
     private final int rejectionCode;
 
-    FoodOrderRejectionReason(int rejectionCode) {
+    FoodOrderReturnCode(int rejectionCode) {
         this.rejectionCode = rejectionCode;
     }
 
@@ -21,7 +21,7 @@ public enum FoodOrderRejectionReason {
 
     @Override
     public String toString() {
-        return "FoodOrderRejectionReason{" +
+        return "FoodOrderReturnCode{" +
                 "rejectionCode=" + rejectionCode +
                 '}';
     }

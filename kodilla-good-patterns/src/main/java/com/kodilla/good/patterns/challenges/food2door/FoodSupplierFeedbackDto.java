@@ -4,18 +4,18 @@ public class FoodSupplierFeedbackDto {
 
     private final boolean orderProcessedSuccessfully;
     private final String message;
-    private final FoodOrderRejectionReason rejectionReason;
+    private final FoodOrderReturnCode returnCode;
 
-    public FoodSupplierFeedbackDto(boolean orderProcessedSuccessfully, String message, FoodOrderRejectionReason rejectionReason) {
+    public FoodSupplierFeedbackDto(boolean orderProcessedSuccessfully, String message, FoodOrderReturnCode returnCode) {
         this.orderProcessedSuccessfully = orderProcessedSuccessfully;
         this.message = message;
-        this.rejectionReason = rejectionReason;
+        this.returnCode = returnCode;
     }
 
     public FoodSupplierFeedbackDto(boolean orderProcessedSuccessfully, String message) {
         this.orderProcessedSuccessfully = orderProcessedSuccessfully;
         this.message = message;
-        this.rejectionReason = FoodOrderRejectionReason.NULL;
+        this.returnCode = FoodOrderReturnCode.NULL;
     }
 
     public boolean isOrderProcessedSuccessfully() {
