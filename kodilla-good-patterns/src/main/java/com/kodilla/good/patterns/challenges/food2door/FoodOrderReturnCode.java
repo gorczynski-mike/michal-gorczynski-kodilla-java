@@ -23,7 +23,8 @@ public enum FoodOrderReturnCode {
     @Override
     public String toString() {
         return "FoodOrderReturnCode{" +
-                "rejectionCode=" + rejectionCode +
+                "rejectionCode=" + rejectionCode + " : " +
+                this.name() +
                 '}';
     }
 }

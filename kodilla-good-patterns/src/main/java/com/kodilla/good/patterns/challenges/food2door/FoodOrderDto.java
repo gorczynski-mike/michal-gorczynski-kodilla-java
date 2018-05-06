@@ -1,8 +1,6 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Unlike FoodOrder it doesn't have supplier field and it provides list of valid return codes to supplier. Use it to
@@ -13,13 +11,15 @@ public class FoodOrderDto {
     private final String customer;
     private final String productName;
     private final int quantity;
-    private final List<FoodOrderReturnCode> returnCodes;
+    private final Map<Integer, FoodOrderReturnCode> returnCodes = new HashMap<>();
 
     public FoodOrderDto(String customer, String productName, int quantity) {
         this.customer = customer;
         this.productName = productName;
         this.quantity = quantity;
-        this.returnCodes = new ArrayList<FoodOrderReturnCode>(Arrays.asList(FoodOrderReturnCode.values()));
+        for(FoodOrderReturnCode returnCode : FoodOrderReturnCode.values()) {
+            returnCodes.put(returnCode.getRejectionCode(), returnCode);
+        }
     }
 
     public FoodOrderDto(FoodOrder foodOrder) {
@@ -38,4 +38,7 @@ public class FoodOrderDto {
         return quantity;
     }
 
+    public Map<Integer, FoodOrderReturnCode> getReturnCodes() {
+        return returnCodes;
+    }
 }

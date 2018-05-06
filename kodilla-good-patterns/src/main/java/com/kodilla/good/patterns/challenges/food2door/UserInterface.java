@@ -63,11 +63,11 @@ public class UserInterface extends JFrame implements MessageService{
 
     private class NewOrderFrame extends JFrame {
         private JLabel customerLabel = new JLabel("Customer: ");
-        private JTextField customerField = new JTextField("Customer name", 30);
+        private JTextField customerField = new JTextField("", 30);
         private JPanel customerPanel = new JPanel();
 
         private JLabel productLabel = new JLabel("Product: ");
-        private JTextField productField = new JTextField("Product name", 30);
+        private JTextField productField = new JTextField("", 30);
         private JPanel productPanel = new JPanel();
 
         private JLabel quantityLabel = new JLabel("Quantity: ");
