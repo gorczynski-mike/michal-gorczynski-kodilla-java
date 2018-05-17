@@ -26,23 +26,20 @@ public class Bigmac {
     }
 
     public static class BigmacBuilder {
-        private Bun bun;
+        private final Bun bun;
         private int burgers;
-        private Sauce sauce;
-        private final List<Ingredient> ingredients = new ArrayList<>();
+        private final Sauce sauce;
+        private final List<Ingredient> ingredients;
 
-        public BigmacBuilder bun(Bun bun) {
+        public BigmacBuilder(Bun bun, Sauce sauce){
             this.bun = bun;
-            return this;
+            this.burgers = 0;
+            this.sauce = sauce;
+            this.ingredients = new ArrayList<>();
         }
 
         public BigmacBuilder burgers(int burgers) {
             this.burgers = burgers;
-            return this;
-        }
-
-        public BigmacBuilder sauce(Sauce sauce) {
-            this.sauce = sauce;
             return this;
         }
 

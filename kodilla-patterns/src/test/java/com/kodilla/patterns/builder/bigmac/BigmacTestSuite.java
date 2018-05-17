@@ -11,11 +11,9 @@ public class BigmacTestSuite {
     public final ExpectedException exception = ExpectedException.none();
 
     @Test
-    public void testBigmacCorrect() {
+    public void testBigmacCorrectNoExceptions() {
         //Given
-        Bigmac bigmac = new Bigmac.BigmacBuilder()
-                .bun(Bigmac.Bun.ORDINARY)
-                .sauce(Bigmac.Sauce.BBQ)
+        Bigmac bigmac = new Bigmac.BigmacBuilder(Bigmac.Bun.ORDINARY, Bigmac.Sauce.BBQ)
                 .ingredient(Bigmac.Ingredient.CHEESE)
                 .ingredient(Bigmac.Ingredient.LETTUCE)
                 .ingredient(Bigmac.Ingredient.PICKLE)
@@ -28,59 +26,27 @@ public class BigmacTestSuite {
     @Test
     public void testBigmacIncorrectNumberOfBurgers() {
         //Given
-        boolean tooManyExceptionThrown = false;
-        boolean tooLittleExceptionThrown = false;
+        boolean tooManyBurgersExceptionThrown = false;
+        boolean tooFewBurgersExceptionThrown = false;
 
         //When
         try {
-            Bigmac bigmacTooMany = new Bigmac.BigmacBuilder()
-                    .bun(Bigmac.Bun.ORDINARY)
-                    .sauce(Bigmac.Sauce.BBQ)
+            Bigmac bigmacTooManyBurgers = new Bigmac.BigmacBuilder(Bigmac.Bun.ORDINARY, Bigmac.Sauce.BBQ)
                     .burgers(4)
                     .build();
         } catch (IllegalStateException e) {
-            tooManyExceptionThrown = true;
+            tooManyBurgersExceptionThrown = true;
         }
         try {
-            Bigmac bigmacTooLittle = new Bigmac.BigmacBuilder()
-                    .bun(Bigmac.Bun.ORDINARY)
-                    .sauce(Bigmac.Sauce.BBQ)
+            Bigmac bigmacTooFewBurgers = new Bigmac.BigmacBuilder(Bigmac.Bun.ORDINARY, Bigmac.Sauce.BBQ)
                     .burgers(-1)
                     .build();
         } catch (IllegalStateException e) {
-            tooLittleExceptionThrown = true;
+            tooFewBurgersExceptionThrown = true;
         }
         //Then
-        Assert.assertTrue(tooManyExceptionThrown);
-        Assert.assertTrue(tooLittleExceptionThrown);
-    }
-
-    @Test
-    public void testBigmacIncorrectBunOrSauceMissing() {
-        //Given
-        boolean sauceMissingExceptionThrown1 = false;
-        boolean bunMissingExceptionThrown2 = false;
-
-        //When
-        try {
-            Bigmac bigmac1 = new Bigmac.BigmacBuilder()
-                    .bun(Bigmac.Bun.SESAME)
-                    .build();
-        } catch (IllegalStateException e) {
-            sauceMissingExceptionThrown1 = true;
-        }
-
-        try {
-            Bigmac bigmac2 = new Bigmac.BigmacBuilder()
-                    .sauce(Bigmac.Sauce.BBQ)
-                    .build();
-        } catch (IllegalStateException e) {
-            bunMissingExceptionThrown2 = true;
-        }
-
-        //Then
-        Assert.assertTrue(sauceMissingExceptionThrown1);
-        Assert.assertTrue(bunMissingExceptionThrown2);
+        Assert.assertTrue(tooManyBurgersExceptionThrown);
+        Assert.assertTrue(tooFewBurgersExceptionThrown);
     }
 
 }
