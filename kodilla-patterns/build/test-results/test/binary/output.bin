@@ -1,0 +1,241 @@
+SBigmac{bun=ORDINARY, burgers=2, sauce=BBQ, ingredients=[CHEESE, LETTUCE, PICKLE]}
+ |  |  |wQ|wP|  |  |  |  |  |  |
+ |  |  |  |  |  |  |  |  |  |  |
+ |  |  |  |  |  |  |  |  |  |  |
+ |  |  |  |  |  |  |  |  |  |  |
+ |  |  |  |  |  |  |  |  |  |  |
+ |  |  |  |  |  |  |  |  |  |  |
+ |  |  |  |  |  |  |  |  |  |  |
+ |  |  |  |  |  |  |  |  |  |  |
+ |  |  |  |  |  |  |  |  |  |  |
+ |  |  |  |  |  |  |  |bP|  |  |
+
+OPizza{bottom='Thick', sauce='Tomato Sauce', ingredients=[Tomato, Onion, Ham]}
+Board [Project number 1]
+   List [Done Tasks]
+       Task [Done Task number 1]
+       Task [Done Task number 2]
+       Task [Done Task number 3]
+       Task [Done Task number 4]
+       Task [Done Task number 5]
+       Task [Done Task number 6]
+       Task [Done Task number 7]
+       Task [Done Task number 8]
+       Task [Done Task number 9]
+!      Task [Done Task number 10]
+   List [In Progress Tasks]
+'      Task [In Progress Task number 1]
+'      Task [In Progress Task number 2]
+'      Task [In Progress Task number 3]
+'      Task [In Progress Task number 4]
+'      Task [In Progress Task number 5]
+'      Task [In Progress Task number 6]
+'      Task [In Progress Task number 7]
+'      Task [In Progress Task number 8]
+'      Task [In Progress Task number 9]
+(      Task [In Progress Task number 10]
+   List [To Do Tasks]
+!      Task [To Do Task number 1]
+!      Task [To Do Task number 2]
+!      Task [To Do Task number 3]
+!      Task [To Do Task number 4]
+!      Task [To Do Task number 5]
+!      Task [To Do Task number 6]
+!      Task [To Do Task number 7]
+!      Task [To Do Task number 8]
+!      Task [To Do Task number 9]
+"      Task [To Do Task number 10]
+
+Board [Project number 1]
+   List [Done Tasks]
+       Task [Done Task number 1]
+       Task [Done Task number 2]
+       Task [Done Task number 3]
+       Task [Done Task number 4]
+       Task [Done Task number 5]
+       Task [Done Task number 6]
+       Task [Done Task number 7]
+       Task [Done Task number 8]
+       Task [Done Task number 9]
+!      Task [Done Task number 10]
+   List [In Progress Tasks]
+'      Task [In Progress Task number 1]
+'      Task [In Progress Task number 2]
+'      Task [In Progress Task number 3]
+'      Task [In Progress Task number 4]
+'      Task [In Progress Task number 5]
+'      Task [In Progress Task number 6]
+'      Task [In Progress Task number 7]
+'      Task [In Progress Task number 8]
+'      Task [In Progress Task number 9]
+(      Task [In Progress Task number 10]
+   List [To Do Tasks]
+!      Task [To Do Task number 1]
+!      Task [To Do Task number 2]
+!      Task [To Do Task number 3]
+!      Task [To Do Task number 4]
+!      Task [To Do Task number 5]
+!      Task [To Do Task number 6]
+!      Task [To Do Task number 7]
+!      Task [To Do Task number 8]
+!      Task [To Do Task number 9]
+"      Task [To Do Task number 10]
+
+Board [Project number 2]
+   List [Done Tasks]
+       Task [Done Task number 1]
+       Task [Done Task number 2]
+       Task [Done Task number 3]
+       Task [Done Task number 4]
+       Task [Done Task number 5]
+       Task [Done Task number 6]
+       Task [Done Task number 7]
+       Task [Done Task number 8]
+       Task [Done Task number 9]
+!      Task [Done Task number 10]
+   List [In Progress Tasks]
+'      Task [In Progress Task number 1]
+'      Task [In Progress Task number 2]
+'      Task [In Progress Task number 3]
+'      Task [In Progress Task number 4]
+'      Task [In Progress Task number 5]
+'      Task [In Progress Task number 6]
+'      Task [In Progress Task number 7]
+'      Task [In Progress Task number 8]
+'      Task [In Progress Task number 9]
+(      Task [In Progress Task number 10]
+   List [To Do Tasks]
+!      Task [To Do Task number 1]
+!      Task [To Do Task number 2]
+!      Task [To Do Task number 3]
+!      Task [To Do Task number 4]
+!      Task [To Do Task number 5]
+!      Task [To Do Task number 6]
+!      Task [To Do Task number 7]
+!      Task [To Do Task number 8]
+!      Task [To Do Task number 9]
+"      Task [To Do Task number 10]
+
+Board [Project number 1]
+   List [Done Tasks]
+       Task [Done Task number 1]
+       Task [Done Task number 2]
+       Task [Done Task number 3]
+       Task [Done Task number 4]
+       Task [Done Task number 5]
+       Task [Done Task number 6]
+       Task [Done Task number 7]
+       Task [Done Task number 8]
+       Task [Done Task number 9]
+!      Task [Done Task number 10]
+   List [In Progress Tasks]
+'      Task [In Progress Task number 1]
+'      Task [In Progress Task number 2]
+'      Task [In Progress Task number 3]
+'      Task [In Progress Task number 4]
+'      Task [In Progress Task number 5]
+'      Task [In Progress Task number 6]
+'      Task [In Progress Task number 7]
+'      Task [In Progress Task number 8]
+'      Task [In Progress Task number 9]
+(      Task [In Progress Task number 10]
+
+Board [Project number 2]
+   List [Done Tasks]
+       Task [Done Task number 1]
+       Task [Done Task number 2]
+       Task [Done Task number 3]
+       Task [Done Task number 4]
+       Task [Done Task number 5]
+       Task [Done Task number 6]
+       Task [Done Task number 7]
+       Task [Done Task number 8]
+       Task [Done Task number 9]
+!      Task [Done Task number 10]
+   List [In Progress Tasks]
+'      Task [In Progress Task number 1]
+'      Task [In Progress Task number 2]
+'      Task [In Progress Task number 3]
+'      Task [In Progress Task number 4]
+'      Task [In Progress Task number 5]
+'      Task [In Progress Task number 6]
+'      Task [In Progress Task number 7]
+'      Task [In Progress Task number 8]
+'      Task [In Progress Task number 9]
+(      Task [In Progress Task number 10]
+
+Board [Project number 3]
+   List [Done Tasks]
+       Task [Done Task number 1]
+       Task [Done Task number 2]
+       Task [Done Task number 3]
+       Task [Done Task number 4]
+       Task [Done Task number 5]
+       Task [Done Task number 6]
+       Task [Done Task number 7]
+       Task [Done Task number 8]
+       Task [Done Task number 9]
+!      Task [Done Task number 10]
+   List [In Progress Tasks]
+'      Task [In Progress Task number 1]
+'      Task [In Progress Task number 2]
+'      Task [In Progress Task number 3]
+'      Task [In Progress Task number 4]
+'      Task [In Progress Task number 5]
+'      Task [In Progress Task number 6]
+'      Task [In Progress Task number 7]
+'      Task [In Progress Task number 8]
+'      Task [In Progress Task number 9]
+(      Task [In Progress Task number 10]
+   List [To Do Tasks]
+!      Task [To Do Task number 1]
+!      Task [To Do Task number 2]
+!      Task [To Do Task number 3]
+!      Task [To Do Task number 4]
+!      Task [To Do Task number 5]
+!      Task [To Do Task number 6]
+!      Task [To Do Task number 7]
+!      Task [To Do Task number 8]
+!      Task [To Do Task number 9]
+"      Task [To Do Task number 10]
+
+!Library{name='Original', books=
+I[    Book{title='Title2', author='Author2', publicationDate=2018-05-24}
+J,     Book{title='Title1', author='Author1', publicationDate=2018-05-24}
+J,     Book{title='Title6', author='Author6', publicationDate=2018-05-24}
+J,     Book{title='Title5', author='Author5', publicationDate=2018-05-24}
+J,     Book{title='Title3', author='Author3', publicationDate=2018-05-24}
+J,     Book{title='Title4', author='Author4', publicationDate=2018-05-24}
+R,     Book{title='TitleTest1', author='AuthorTest1', publicationDate=2018-05-24}
+R,     Book{title='TitleTest2', author='AuthorTest2', publicationDate=2018-05-24}
+]}
+ Library{name='Shallow', books=
+I[    Book{title='Title2', author='Author2', publicationDate=2018-05-24}
+J,     Book{title='Title1', author='Author1', publicationDate=2018-05-24}
+J,     Book{title='Title6', author='Author6', publicationDate=2018-05-24}
+J,     Book{title='Title5', author='Author5', publicationDate=2018-05-24}
+J,     Book{title='Title3', author='Author3', publicationDate=2018-05-24}
+J,     Book{title='Title4', author='Author4', publicationDate=2018-05-24}
+R,     Book{title='TitleTest1', author='AuthorTest1', publicationDate=2018-05-24}
+R,     Book{title='TitleTest2', author='AuthorTest2', publicationDate=2018-05-24}
+]}
+Library{name='Deep', books=
+I[    Book{title='Title2', author='Author2', publicationDate=2018-05-24}
+J,     Book{title='Title4', author='Author4', publicationDate=2018-05-24}
+J,     Book{title='Title5', author='Author5', publicationDate=2018-05-24}
+J,     Book{title='Title6', author='Author6', publicationDate=2018-05-24}
+J,     Book{title='Title3', author='Author3', publicationDate=2018-05-24}
+]}
+Log: [msg1]
+Log: [msg2]
+Log: [msg3]
+ Opening the settings file
+Saving settings to file
+Loading settings from file
+Opened: myapp.settings
+ Closing the settings file
+?Steven should: [Conservative predictor] Buy debentures of XYZ
+<Steven now should: [Aggressive predictor] Buy stock of XYZ
+?Steven should: [Conservative predictor] Buy debentures of XYZ
+6John should: [Aggressive predictor] Buy stock of XYZ
+CKodilla should: [Balanced predictor] Buy shared units of Fund XYZ
