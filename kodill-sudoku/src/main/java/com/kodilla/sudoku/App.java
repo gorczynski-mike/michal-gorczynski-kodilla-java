@@ -17,10 +17,9 @@ public class App {
                 if (userInput.equalsIgnoreCase("error")) {
                     System.out.println("Invalid format, try again.");
                     continue;
-                }
-                if (userInput.equalsIgnoreCase("sudoku")) {
+                } else if (userInput.equalsIgnoreCase("sudoku")) {
                     finishLoopFlag = true;
-                    simpleSudokuBoard.solveSudoku();
+                    simpleSudokuBoard.solveSudoku(false);
                 } else if (userInput.contains("unset")) {
                     String[] inputParts = userInput.split(",");
                     try {
@@ -37,10 +36,17 @@ public class App {
                     }
                 } else if (userInput.matches("random")) {
                     simpleSudokuBoard.generateRandomNumbers(1);
+                } else if (userInput.matches("clear")) {
+                    simpleSudokuBoard.clearTheBoard();
+                    simpleSudokuBoard.printBoard();
                 } else if (userInput.matches("random,\\d+")) {
                     String[] inputParts = userInput.split(",");
                     int howManyToGuess = Integer.parseInt(inputParts[1]);
                     simpleSudokuBoard.generateRandomNumbers(howManyToGuess);
+                } else if (userInput.matches("solvable,\\d+")) {
+                    String[] inputParts = userInput.split(",");
+                    int howManyToGenerate = Integer.parseInt(inputParts[1]);
+                    simpleSudokuBoard.generateSolvableBoard(howManyToGenerate);
                 } else {
                     String[] inputParts = userInput.split(",");
                     try {
