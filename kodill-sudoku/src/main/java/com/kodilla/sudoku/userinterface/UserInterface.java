@@ -1,4 +1,4 @@
-package com.kodilla.sudoku;
+package com.kodilla.sudoku.userinterface;
 
 public interface UserInterface {
 

@@ -1,28 +1,24 @@
 package com.kodilla.sudoku.simple;
 
-public class CoordinatePair {
+/**
+ * Simple immutable class to hold a pair of x,y coordinates
+ */
+public final class CoordinatePair {
 
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     public CoordinatePair(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
-        return x;
+    public final int getX() {
+        return this.x;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public final int getY() {
+        return this.y;
     }
 
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
 }

@@ -1,13 +1,11 @@
 package com.kodilla.sudoku.simple;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class SudokuElement {
 
     private int value = 0;
-    private List<Integer> possibleValues = new ArrayList<>();
+    private final List<Integer> possibleValues = new ArrayList<>();
 
     public SudokuElement() {
         possibleValues.addAll(Arrays.asList(1,2,3,4,5,6,7,8,9));
@@ -16,21 +14,34 @@ public class SudokuElement {
     public SudokuElement getCopy() {
         SudokuElement copy = new SudokuElement();
         copy.value = this.value;
-        copy.getPossibleValues().retainAll(this.possibleValues);
+        copy.possibleValues.retainAll(this.possibleValues);
         return copy;
     }
 
-    public List<Integer> getPossibleValues() {
-        return possibleValues;
+    public List<Integer> getPossibleValuesCopy() {
+        return new ArrayList<>(possibleValues);
+    }
+
+    public boolean removePossibleValue(Integer value) {
+        return this.possibleValues.remove(value);
+    }
+
+    public boolean addPossibleValue(Integer value) {
+        if(this.possibleValues.contains(value)) {
+            return false;
+        } else {
+            return this.possibleValues.add(value);
+        }
     }
 
     public int getValue() {
-        return value;
+        return this.value;
     }
 
     public void setValue(int value) {
         if(!possibleValues.contains(value)) {
-            throw new IllegalArgumentException("Can't set value, value is not possible here.");
+            throw new IllegalArgumentException("Can't set value, value is not possible here. Value: " + value +
+            "Possible values: " + possibleValues);
         }
         this.value = value;
     }
@@ -41,6 +52,6 @@ public class SudokuElement {
 
     @Override
     public String toString() {
-        return "" + value;
+        return this.value == 0 ? " " : String.valueOf(value);
     }
 }

@@ -1,39 +1,32 @@
 package com.kodilla.sudoku.simple;
 
-import java.util.Arrays;
-
 public class SudokuState {
 
-    private SudokuElement[][] board;
-    private int xIndex;
-    private int yIndex;
-    private int guessedNumber;
+    private final SudokuElement[][] sudokuElementsArray;
+    private final int xIndex;
+    private final int yIndex;
+    private final int guessedNumber;
 
-    public SudokuState(SudokuElement[][] board, int xIndex, int yIndex, int guessedNumber) {
-        this.board = new SudokuElement[9][9];
-        for(int i=0; i<9; i++) {
-            for(int j=0; j<9; j++) {
-                this.board[i][j] = board[i][j].getCopy();
-            }
-        }
+    public SudokuState(SudokuElement[][] sudokuElementsArray, int xIndex, int yIndex, int guessedNumber) {
+        this.sudokuElementsArray = SudokuArrayFactory.copySudokuArray(sudokuElementsArray);
         this.xIndex = xIndex;
         this.yIndex = yIndex;
         this.guessedNumber = guessedNumber;
     }
 
-    public SudokuElement[][] getBoard() {
-        return board;
+    public final SudokuElement[][] getSudokuElementsArray() {
+        return this.sudokuElementsArray;
     }
 
-    public int getxIndex() {
-        return xIndex;
+    public final int getXIndex() {
+        return this.xIndex;
     }
 
-    public int getyIndex() {
-        return yIndex;
+    public final int getYIndex() {
+        return this.yIndex;
     }
 
-    public int getGuessedNumber() {
-        return guessedNumber;
+    public final int getGuessedNumber() {
+        return this.guessedNumber;
     }
 }
