@@ -5,6 +5,10 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.getCompaniesWithNameStartingWith",
+        query = "SELECT * FROM companies WHERE LEFT(company_name,3) = :PATTERN"
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
