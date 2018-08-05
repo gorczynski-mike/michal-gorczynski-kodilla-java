@@ -16,4 +16,5 @@ public interface CompanyDao extends CrudRepository<Company, Integer> {
     @Query(nativeQuery = true)
     List<Company> getCompaniesWithNameStartingWith(@Param("PATTERN") String pattern);
 
+    List<Company> findByNameContainingIgnoreCase(String companyName);
 }
