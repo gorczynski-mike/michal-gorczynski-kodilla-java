@@ -54,22 +54,17 @@ public class InformationServiceFacadeTest {
 
     @Transactional
     @Test
-    public void shouldFindEmployeesByFirstNameFragment() {
-        try {
+    public void shouldFindEmployeesByFirstNameFragment() throws InformationServiceException {
             List<Employee> ohResultList = informationServiceFacade.getEmployeesWithNameLike("oh");
             List<Employee> ohnaResultList = informationServiceFacade.getEmployeesWithNameLike("ohna");
 
             assertEquals(2, ohResultList.size());
             assertEquals(1, ohnaResultList.size());
-        } catch (InformationServiceException e) {
-//            business exception
-        }
     }
 
     @Transactional
     @Test
-    public void shouldFindEmployeesByLastNameFragment() {
-        try {
+    public void shouldFindEmployeesByLastNameFragment() throws InformationServiceException {
             List<Employee> sResultList = informationServiceFacade.getEmployeesWithNameLike("s");
             List<Employee> smitResultList = informationServiceFacade.getEmployeesWithNameLike("smit");
             List<Employee> ittyResultList = informationServiceFacade.getEmployeesWithNameLike("itty");
@@ -77,27 +72,19 @@ public class InformationServiceFacadeTest {
             assertEquals(3, sResultList.size());
             assertEquals(2, smitResultList.size());
             assertEquals(1, ittyResultList.size());
-        } catch (InformationServiceException e) {
-//            business exception
-        }
     }
 
     @Transactional
     @Test
-    public void shouldFindEmployeesByFirstNameOrLastNameFragment() {
-        try {
+    public void shouldFindEmployeesByFirstNameOrLastNameFragment() throws InformationServiceException {
             List<Employee> oResultList = informationServiceFacade.getEmployeesWithNameLike("o");
 
             assertEquals(3, oResultList.size());
-        } catch (InformationServiceException e) {
-//            business exception
-        }
     }
 
     @Transactional
     @Test
-    public void testCompanySearchFunction() {
-        try {
+    public void testCompanySearchFunction() throws InformationServiceException {
             List<Company> softResultList = informationServiceFacade.getCompaniesWithNameLike("soft");
             List<Company> attResultList = informationServiceFacade.getCompaniesWithNameLike("att");
             List<Company> mResultList = informationServiceFacade.getCompaniesWithNameLike("m");
@@ -105,9 +92,5 @@ public class InformationServiceFacadeTest {
             assertEquals(1, softResultList.size());
             assertEquals(2, attResultList.size());
             assertEquals(3, mResultList.size());
-        } catch (InformationServiceException e) {
-//            business exception
-        }
     }
-
 }
