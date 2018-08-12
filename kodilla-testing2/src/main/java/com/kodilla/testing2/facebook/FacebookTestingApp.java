@@ -14,14 +14,16 @@ public class FacebookTestingApp {
     public static final String FACEBOOK_REGISTRATION_EMAIL = "reg_email__";
     public static final String FACEBOOK_REGISTRATION_EMAILCONFIRMATION = "reg_email_confirmation__";
     public static final String FACEBOOK_REGISTRATION_PASSWORD = "reg_passwd__";
-    public static final String FACEBOOK_REGISTRATION_BDAY_DAY = "day";
-    public static final String FACEBOOK_REGISTRATION_BDAY_MONTH = "month";
-    public static final String FACEBOOK_REGISTRATION_BDAY_YEAR = "year";
+    public static final String FACEBOOK_REGISTRATION_BDAY_DAY = "//span[@class=\"_5k_4\"]/span/select[1]";
+    public static final String FACEBOOK_REGISTRATION_BDAY_MONTH = "//span[@class=\"_5k_4\"]/span/select[2]";
+    public static final String FACEBOOK_REGISTRATION_BDAY_YEAR = "//span[@class=\"_5k_4\"]/span/select[3]";
     public static final String FACEBOOK_REGISTRATION_MALE_RADIO = "u_0_a";
+
+    //div[@id="reg_box"]/
 
 
     public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
+        WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
         driver.get(FACEBOOK_URL);
 
         WebElement regFirstname = driver.findElement(By.name(FACEBOOK_REGISTRATION_FIRSTNAME));
@@ -36,15 +38,15 @@ public class FacebookTestingApp {
         WebElement regPasswd = driver.findElement(By.name(FACEBOOK_REGISTRATION_PASSWORD));
         regPasswd.sendKeys("password");
 
-        WebElement comboDay = driver.findElement(By.id(FACEBOOK_REGISTRATION_BDAY_DAY));
+        WebElement comboDay = driver.findElement(By.xpath(FACEBOOK_REGISTRATION_BDAY_DAY));
         Select daySelect = new Select(comboDay);
         daySelect.selectByIndex(1);
 
-        WebElement comboMonth = driver.findElement(By.id(FACEBOOK_REGISTRATION_BDAY_MONTH));
+        WebElement comboMonth = driver.findElement(By.xpath(FACEBOOK_REGISTRATION_BDAY_MONTH));
         Select monthSelect = new Select(comboMonth);
         monthSelect.selectByIndex(1);
 
-        WebElement comboYear = driver.findElement(By.id(FACEBOOK_REGISTRATION_BDAY_YEAR));
+        WebElement comboYear = driver.findElement(By.xpath(FACEBOOK_REGISTRATION_BDAY_YEAR));
         Select yearSelect = new Select(comboYear);
         yearSelect.selectByValue("1970");
 
@@ -52,7 +54,7 @@ public class FacebookTestingApp {
         maleRadioButton.click();
 
         while(!driver.findElement(By.name(FACEBOOK_REGISTRATION_EMAILCONFIRMATION)).isDisplayed()) {
-            Thread.sleep(1000);
+            Thread.sleep(250);
         }
 
         WebElement regEmailConfirmation = driver.findElement(By.name(FACEBOOK_REGISTRATION_EMAILCONFIRMATION));
